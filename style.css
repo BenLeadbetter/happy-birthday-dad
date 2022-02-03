@@ -1,0 +1,198 @@
+:root {
+    --total-period: 40s;
+}
+
+body {
+    background-color: black;
+}
+
+#main {
+    width: 80%;
+    height: 80%;
+    position: relative;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+#container {
+    width: 1200px;
+    height: 799px;
+    position: absolute;
+    overflow: hidden;
+} 
+
+#background {
+    width: 1200px;
+    height: 799px;
+    z-index: -101;
+    position: absolute;
+    background-image: url("assets/bg.png")
+}
+
+#sun {
+    width: 255px; 
+    height: 255px; 
+    left: 473px;
+    top: 272px;
+    position: absolute;
+}
+
+#sun-top {
+    position: absolute;
+    width: 255px; 
+    height: 149px;
+    top: 0px;
+    z-index: 100;
+    background-image: url("assets/sun-top.png")
+}
+
+#sun-bottom {
+    position: absolute;
+    width: 255px; 
+    height: 140px;
+    bottom: 0px;
+    z-index: -100;
+    background-image: url("assets/sun-bottom.png")
+}
+
+#head {
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    offset-path: path('M 600,399 m -420,0 a 420,199 0 0,1 840,0 a 420,199 0 0,1 -840,0');
+    offset-rotate: 0deg;
+    animation: move-head var(--total-period) linear infinite;
+}
+
+@keyframes move-head {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+#face {
+    width: 270px;
+    height: 270px;
+    z-index: 2;
+    position: absolute;
+    background-image: url("assets/head.png");
+    animation: rotate-face var(--total-period) linear infinite;
+}
+
+@keyframes rotate-face {
+    100% {
+        transform: rotateZ(calc(5 * 360deg));
+    }
+}
+
+#moon {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    z-index: 4;
+    background-image: url("assets/moon.png");
+    offset-rotate: 0deg;
+    offset-path: path('M 142,142 m -170,0 a 170,30 0 0,1 340,0 a 170,30 0 0,1 -340,0');
+    animation: move-moon calc(0.3 * var(--total-period)) linear infinite;
+}
+
+@keyframes move-moon {
+    0% {
+        offset-distance: 0%;
+        z-index: 3;
+    }
+    100% {
+        offset-distance: 100%;
+        z-index: 0;
+    }
+}
+
+#six {
+    width: 91px;
+    height: 91px;
+    z-index: -1;
+    position: absolute;
+    offset-rotate: 0deg;
+    offset-path: path('M 600,399 m -210,0 a 210,119 0 0,1 420,0 a 210,119 0 0,1 -420,0');
+    animation: move-six calc(0.4 * var(--total-period)) linear infinite;
+    animation-delay: calc(-0.5 * var(--total-period));
+    background-image: url("assets/6.png");
+}
+
+@keyframes move-six {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+#zero {
+    width: 109px;
+    height: 109px;
+    z-index: -2;
+    position: absolute;
+    offset-rotate: 0deg;
+    offset-path: path('M 600,399 m -270,0 a 270,139 0 0,1 540,0 a 270,139 0 0,1 -540,0');
+    animation: move-zero calc(0.6 * var(--total-period)) linear infinite;
+    animation-delay: calc(-0.4 * var(--total-period));
+    background-image: url("assets/0.png");
+}
+
+@keyframes move-zero {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+#happy {
+    width: 157px;
+    height: 157px;
+    z-index: -3;
+    position: absolute;
+    offset-rotate: 0deg;
+    offset-path: path('M 600,399 m -480,0 a 480,239 0 0,1 960,0 a 480,239 0 0,1 -960,0');
+    animation: move-happy calc(1.2 * var(--total-period)) linear infinite;
+    animation-delay: calc(-0.9 * var(--total-period));
+    background-image: url("assets/happy.png");
+}
+
+@keyframes move-happy {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+#birthday {
+    width: 205px;
+    height: 205px;
+    z-index: -4;
+    position: absolute;
+    offset-rotate: 0deg;
+    offset-path: path('M 600,399 m -600,0 a 600,299 0 0,1 1200,0 a 600,299 0 0,1 -1200,0');
+    animation: move-birthday calc(1.5 * var(--total-period)) linear infinite;
+    animation-delay: calc(-0.4 * var(--total-period));
+    background-image: url("assets/birthday.png");
+}
+
+@keyframes move-birthday {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+#dad {
+    width: 143px;
+    height: 143px;
+    z-index: -5;
+    position: absolute;
+    offset-rotate: 0deg;
+    offset-path: path('M 600,399 m -720,0 a 720,319 0 0,1 1440,0 a 720,319 0 0,1 -1440,0');
+    animation: move-dad calc(1.5 * var(--total-period)) linear infinite;
+    animation-delay: calc(-0.8 * var(--total-period));
+    background-image: url("assets/dad.png");
+}
+
+@keyframes move-dad {
+    100% {
+        offset-distance: 100%;
+    }
+}
